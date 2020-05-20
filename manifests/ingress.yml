@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "tnsclustersoutheastasia"
+    labels:
+        app: "tnsclustersoutheastasia"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: tnsclustersoutheastasiae615-tnsclustersoutheastasia.8eaf6e74142a4af8ac76.southeastasia.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "tnsclustersoutheastasia"
+                servicePort: 1883
