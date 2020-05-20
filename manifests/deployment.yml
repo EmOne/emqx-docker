@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "tnsclustersoutheastasia"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "tnsclustersoutheastasia"
+    spec:
+      containers:
+        - name: "tnsclustersoutheastasia"
+          image: "emqx001.azurecr.io/tnsclustersoutheastasia"
+          ports:
+          - containerPort: 1883
